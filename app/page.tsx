@@ -51,9 +51,9 @@ export default async function HomePage() {
       icon: "pine",
     },
     {
-      id: "foxtail-palm",
-      name: "Foxtail Palm",
-      scientific_name: "Wodyetia bifurcata",
+      id: "flame-tree",
+      name: "Flame Tree",
+      scientific_name: "Delonix regia",
       description:
         "Ornamental palm with bushy fronds, often planted in tropical landscapes.",
       image_url: "/placeholder.jpg",
@@ -105,18 +105,18 @@ export default async function HomePage() {
       icon: "pine",
     },
     {
-      id: "dao",
-      name: "Dao Tree",
-      scientific_name: "Dracontomelon dao",
+      id: "narra-tree",
+      name: "Narra Tree",
+      scientific_name: "Pterocarpus indicus",
       description:
         "Native shade tree with spreading branches, often planted in parks.",
       image_url: "/placeholder.jpg",
       icon: "leaf",
     },
     {
-      id: "fishtail-palm",
-      name: "Fishtail Palm",
-      scientific_name: "Caryota mitis",
+      id: "star-apple-tree",
+      name: "Star Apple Tree",
+      scientific_name: "Chrysophyllum cainito",
       description:
         "Palm tree with fishtail-shaped leaves, commonly used for landscaping.",
       image_url: "/placeholder.jpg",
@@ -141,8 +141,8 @@ export default async function HomePage() {
       icon: "palmtree",
     },
     {
-      id: "areca-palm",
-      name: "Areca/Butterfly Palm",
+      id: "coconut-palm",
+      name: "Coconut Palm",
       scientific_name: "Dypsis lutescens",
       description:
         "Elegant clustering palm often used indoors and outdoors for ornamental purposes.",
@@ -179,9 +179,7 @@ export default async function HomePage() {
               <span className="text-primary">CBAA</span> Eco Tag
             </h1>
             <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
-              Welcome to the University of Northern Philippines eco-friendly tree tracking system. Each tree on our
-              campus has been tagged with a unique QR code to help you learn about its species, environmental impact,
-              and contribution to our ecosystem.
+              Trees of -UNP, mas cool pa sa aircon, mas reliable pa sa WI-FI - <strong>SCAN. LEARN. ACT</strong>
             </p>
           </div>
         </div>

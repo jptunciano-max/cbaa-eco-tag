@@ -75,6 +75,10 @@ export default async function TreeDetailPage({ params }: { params: { id: string 
   const imageSrc = tree?.image_url || "/placeholder.jpg"
   const sciName = tree?.scientific_name || ""
 
+  // Read location from DB details
+  const locationFromDetails = (details as any[])?.find((d: any) => (d?.title || '').toLowerCase() === 'location')?.text as string | undefined
+  const locationText = locationFromDetails && !/coming\s+soon/i.test(locationFromDetails) ? locationFromDetails : undefined
+
   return (
     <div className="min-h-screen bg-background">
       {/* Video Section */}
@@ -168,6 +172,9 @@ export default async function TreeDetailPage({ params }: { params: { id: string 
                     <div className="space-y-2">
                       <h3 className="text-lg sm:text-xl font-semibold">{sciName}</h3>
                       <p className="text-sm sm:text-base text-muted-foreground">{tree.name}</p>
+                      {locationText && (
+                        <p className="text-sm sm:text-base text-muted-foreground">{`Location: ${locationText}`}</p>
+                      )}
                     </div>
                   </div>
                 </CardContent>
