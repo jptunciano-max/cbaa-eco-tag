@@ -113,7 +113,7 @@ export default async function TreeDetailPage({ params }: { params: { id: string 
                   rel="noopener noreferrer"
                   className="underline"
                 >
-                  Open on YouTube
+                  Open on Google Drive
                 </a>
               </div>
             </Card>
