@@ -94,8 +94,8 @@ export default async function TreeDetailPage({ params }: { params: { id: string 
               </p>
             </div>
 
-            <Card className="overflow-hidden">
-              <div className="aspect-video relative">
+            <Card className="overflow-hidden max-w-md mx-auto">
+              <div className="relative" style={{ aspectRatio: '9/16' }}>
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src={videoUrl}
