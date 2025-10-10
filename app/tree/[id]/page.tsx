@@ -1,7 +1,9 @@
 import type React from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Calendar, Droplets, Sun } from "lucide-react"
+import { MapPin, Calendar, Droplets, Sun, ArrowLeft } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 import { supabase } from "@/lib/supabaseClient"
 import { notFound } from "next/navigation"
 import { ScrollToTop } from "@/components/scroll-to-top"
@@ -84,11 +86,33 @@ export default async function TreeDetailPage({ params }: { params: { id: string 
     locationFromDetails && !/coming\s+soon/i.test(locationFromDetails) ? locationFromDetails : undefined
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Nature Background Patterns */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Large organic shapes */}
+        <div className="absolute top-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-gradient-to-br from-green-300/60 to-emerald-300/60 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 right-0 w-40 h-40 sm:w-80 sm:h-80 bg-gradient-to-bl from-lime-300/60 to-green-300/60 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute bottom-0 left-1/4 w-36 h-36 sm:w-72 sm:h-72 bg-gradient-to-tr from-emerald-300/60 to-lime-300/60 rounded-full blur-3xl animate-pulse delay-2000" />
+        <div className="absolute bottom-1/3 right-1/3 w-32 h-32 sm:w-64 sm:h-64 bg-gradient-to-tl from-green-300/60 to-emerald-300/60 rounded-full blur-3xl animate-pulse delay-3000" />
+        
+        {/* Medium floating shapes */}
+        <div className="absolute top-10 right-1/4 w-16 h-16 sm:top-20 sm:w-32 sm:h-32 bg-green-400/50 rounded-full blur-2xl animate-bounce delay-500" />
+        <div className="absolute top-1/2 left-4 w-12 h-12 sm:left-20 sm:w-24 sm:h-24 bg-emerald-400/50 rounded-full blur-2xl animate-bounce delay-1500" />
+        <div className="absolute bottom-10 right-4 w-14 h-14 sm:bottom-20 sm:right-20 sm:w-28 sm:h-28 bg-lime-400/50 rounded-full blur-2xl animate-bounce delay-2500" />
+        <div className="absolute bottom-1/2 left-1/3 w-10 h-10 sm:w-20 sm:h-20 bg-green-400/50 rounded-full blur-2xl animate-bounce delay-3500" />
+        
+      </div>
+
       {/* Video Section */}
-      <section className="pt-12 pb-12 sm:pt-16 sm:pb-16 lg:pt-28 lg:pb-28 bg-background">
+      <section className="pt-12 pb-12 sm:pt-16 sm:pb-16 lg:pt-28 lg:pb-28 relative z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
+            <Link href="/">
+              <Button variant="ghost" className="mb-6 group">
+                <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+                Back to Home
+              </Button>
+            </Link>
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               {/* Left: Text Content */}
               <div className="space-y-5 sm:space-y-6 text-center lg:text-left">
@@ -173,7 +197,7 @@ export default async function TreeDetailPage({ params }: { params: { id: string 
       </section>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-muted/30">
+      <section className="relative overflow-hidden bg-muted/30 z-10">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 organic-blob float-animation" />
           <div className="absolute top-40 right-20 w-48 h-48 bg-accent/15 organic-blob-2 pulse-eco" />
@@ -238,7 +262,7 @@ export default async function TreeDetailPage({ params }: { params: { id: string 
       </section>
 
       {/* Plant Details Section */}
-      <section className="py-16 sm:py-20 lg:py-32 bg-background">
+      <section className="py-16 sm:py-20 lg:py-32 relative z-10">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center space-y-5 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-balance tracking-tight">
@@ -272,7 +296,7 @@ export default async function TreeDetailPage({ params }: { params: { id: string 
       </section>
 
       {/* Environmental Impact Section */}
-      <section className="py-16 sm:py-20 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden z-10">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-10 right-10 w-32 h-32 bg-primary-foreground/10 organic-blob-2" />
           <div className="absolute bottom-10 left-10 w-24 h-24 bg-primary-foreground/10 organic-blob" />
